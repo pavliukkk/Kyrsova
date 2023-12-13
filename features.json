@@ -1,0 +1,17 @@
+[
+{
+"image" : "img/feature_img1.svg",
+"title" : "Premium Quality",
+"subtitle" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Neque congue arcu",
+},
+{
+"image" : "img/feature_img2.svg",
+"title" : "Seasonal Vegetables",
+"subtitle" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Neque congue arcu",
+},
+{
+"image" : "img/feature_img3.svg",
+"title" : "Fresh Fruit",
+"subtitle" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Neque congue arcu",
+},
+]
