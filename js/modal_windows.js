@@ -2,7 +2,6 @@ document.addEventListener("DOMContentLoaded", function() {
     const loginModal = document.getElementById("login");
     const wrapper = document.getElementById("wrapper");
 
-    // Затримка відображення модального вікна через 2 секунди
     setTimeout(function() {
         loginModal.style.display = "block";
         wrapper.classList.add("blur");
