@@ -4,13 +4,12 @@ document.addEventListener("DOMContentLoaded", function() {
     const wrapper = document.getElementById("wrapper");
 
     reservationForm.addEventListener('submit', function(event) {
-        event.preventDefault(); // Заборона типової події відправки форми
+        event.preventDefault();
 
         const dateInput = document.querySelector('input[type="date"]');
         const timeInput = document.querySelector('input[type="time"]');
 
         if (!dateInput.value || !timeInput.value) {
-            // Показати відповідне повідомлення про незаповнені поля
             if (!dateInput.value && !timeInput.value) {
                 document.getElementById("select_both").style.display = "block";
             } else if (!dateInput.value) {
@@ -19,7 +18,6 @@ document.addEventListener("DOMContentLoaded", function() {
                 document.getElementById("select_time").style.display = "block";
             }
         } else {
-            // Показати модальне вікно після затримки (наприклад, 2 секунди)
             setTimeout(function() {
                 successModal.style.display = "block";
                 wrapper.classList.add("blur");
@@ -28,18 +26,16 @@ document.addEventListener("DOMContentLoaded", function() {
                     successModal.style.display = "none";
                     wrapper.classList.remove("blur");
                     if (reservationForm.checkValidity()) {
-                        reservationForm.submit(); // Надсилаємо форму після закриття модального вікна
+                        reservationForm.submit();
                     }
                 }
             
-                // Додаємо обробник кліку для модального вікна
                 successModal.addEventListener("click", function(event) {
                     if (event.target.classList.contains("close")) {
                         closeModalAndSubmitForm();
                     }
                 });
             
-                // Додаємо обробник кліку для всього документу
                 document.addEventListener("click", function(event) {
                     if (!successModal.contains(event.target)) {
                         closeModalAndSubmitForm();
