@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const reservationForm = document.querySelector('.reservation__form');
   const dateInput = reservationForm.querySelector('input[type="date"]');
   const timeInput = reservationForm.querySelector('input[type="time"]');
-  const wrapper = document.getElementById('wrapper'); // Припускаючи, що існує елемент з класом 'wrapper'
+  const wrapper = document.getElementById('wrapper');
   const currentPage = window.location.href;
 
   let currentDate = new Date().toISOString().split('T')[0];
@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function () {
   window.addEventListener("click", closeOnOutsideClick);
 
   reservationForm.addEventListener('submit', function (event) {
-    event.preventDefault(); // Заборонити відправку форми для відлагодження
+    event.preventDefault();
 
     let currentTime = new Date().toLocaleTimeString('en-US', { hour12: false });
     const firstName = reservationForm.querySelector('input[name="first_name"]').value;
@@ -60,11 +60,10 @@ document.addEventListener("DOMContentLoaded", function () {
           successModal.style.display = "none";
           wrapper.classList.remove("blur");
           if (reservationForm.checkValidity()) {
-            reservationForm.submit(); // Спробуйте відправити форму
+            reservationForm.submit(); 
           }
         }
 
-        // Додати обробники подій для закриття модального вікна та відправлення форми
         successModal.addEventListener("click", function (event) {
           if (event.target.classList.contains("close")) {
             closeModalAndSubmitForm();
