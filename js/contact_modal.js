@@ -8,6 +8,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
   let currentDate = new Date().toISOString().split('T')[0];
   dateInput.setAttribute('min', currentDate);
+  dateInput.value = currentDate;
+  let currentTime = new Date().toLocaleTimeString('en-US', { hour12: false, hour: '2-digit', minute: '2-digit' });
+  timeInput.value = currentTime;
 
   const phoneInput = reservationForm.querySelector('input[name="phone"]');
   
