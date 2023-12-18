@@ -14,13 +14,12 @@ document.addEventListener("DOMContentLoaded", function() {
     fillError.style.display = 'none';
 
     phoneNumberField.addEventListener('input', function() {
-        // Обмежуємо введення лише цифр та до 10 символів
         const regex = /[^\d]/g;
         phoneNumberField.value = phoneNumberField.value.replace(regex, '').substring(0, 10);
     });
 
     signUpForm.addEventListener('submit', function(event) {
-        event.preventDefault(); // Зупиняємо стандартну відправку форми
+        event.preventDefault();
 
         const password = passwordField.value;
         const confirmPassword = confirmPasswordField.value;
