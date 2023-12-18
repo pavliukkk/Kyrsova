@@ -6,9 +6,11 @@ document.addEventListener('DOMContentLoaded', function () {
     const timeInput = form.querySelector('input[type="time"]');
     const dateField = document.querySelector('input[type="date"]');
     
-    // Set the minimum date to the current date
-    let currentDate = new Date().toISOString().split('T')[0]; // Current date in "YYYY-MM-DD" format
+    let currentDate = new Date().toISOString().split('T')[0];
     dateInput.setAttribute('min', currentDate);
+    dateField.value = currentDate;
+    let currentTime = new Date().toLocaleTimeString('en-US', { hour12: false, hour: '2-digit', minute: '2-digit' });
+    timeInput.value = currentTime;
  
     form.addEventListener('submit', function (event) {
         let dateSelected = !!dateInput.value;
