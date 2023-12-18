@@ -1,12 +1,13 @@
 async function getData() {
-    const requestURL = 'https://pavliukkk.github.io/Kyrsova/features.json';
-    try {
-        const response = await fetch(requestURL);
-        const services = await response.json();
-        populateService(services);
-    } catch (error) {
-        console.error('Error fetching data:', error);
-    }
+  const requestURL = 'https://pavliukkk.github.io/Kyrsova/features.json';
+  try {
+      const response = await fetch(requestURL);
+      const services = await response.json();
+      const shuffledServices = shuffleArray(services);
+      populateService(shuffledServices);
+  } catch (error) {
+      console.error('Error fetching data:', error);
+  }
 }
 
 function populateService(obj) {
@@ -37,6 +38,15 @@ function populateService(obj) {
 
     serviceList.appendChild(serviceElement);
   });
+}
+
+function shuffleArray(array) {
+  const shuffledArray = array.slice();
+  for (let i = shuffledArray.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffledArray[i], shuffledArray[j]] = [shuffledArray[j], shuffledArray[i]];
+  }
+  return shuffledArray;
 }
 
 getData();
