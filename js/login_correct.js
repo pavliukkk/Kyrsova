@@ -11,16 +11,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
             if (!emailInput.value.trim()) {
                 valid = false;
-                errorMessages[2].style.display = 'block';
+                errorMessages[0].style.display = 'block';
             } else {
-                errorMessages[2].style.display = 'none';
+                errorMessages[0].style.display = 'none';
             }
 
             if (!passwordInput.value.trim()) {
                 valid = false;
-                errorMessages[3].style.display = 'block';
+                errorMessages[1].style.display = 'block';
             } else {
-                errorMessages[3].style.display = 'none';
+                errorMessages[1].style.display = 'none';
             }
 
             if (!valid) {
