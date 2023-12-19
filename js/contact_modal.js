@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const errorMessage = document.getElementById("error");
 
-    if (!firstName || !lastName || !email || !phone || !date || !time || !currentPage.includes('/contact/')) {
+    if (!firstName || !lastName || !email || !phone || !date || !time || !currentPage.includes('contact.html')) {
       errorMessage.style.display = "block";
     } else {
       setTimeout(function () {
@@ -60,7 +60,7 @@ document.addEventListener("DOMContentLoaded", function () {
           successModal.style.display = "none";
           wrapper.classList.remove("blur");
           if (reservationForm.checkValidity()) {
-            reservationForm.submit(); 
+            reservationForm.submit();
           }
         }
 
